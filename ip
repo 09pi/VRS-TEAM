@@ -1,0 +1,58 @@
+try:
+	import requests
+except ModuleNotFoundError:
+	os.system("pip install requests")  
+def loger():
+	Clean_Url = input("Enter the url : ")
+	url = f"https://grabify.icu/qrcode.php?i={Clean_Url}"
+	headers = {
+		"User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Mobile/15E148 Safari/604.1",
+		"Cookie":"__gads=ID=a877e90ee29a8d6b-22018e9731d50014:T=1662333657:RT=1662333657:S=ALNI_MYM2yHzU9wufkv_fNEf8Tb52_EouA; __gpi=UID=00000ab3dad9b8aa:T=1662333657:RT=1662333657:S=ALNI_Ma6KmRgQozfG0Cn1LKTs4SlBam21w; _ga=GA1.2.2064361141.1662333657; _gat_gtag_UA_149594131_4=1; _gid=GA1.2.56770951.1662333657; userjoe=Mon Sep 05 2022 02:20:56 GMT+0300 (+03); usertime=Mon Sep 05 2022 02:20:56 GMT+0300 (+03); PHPSESSID=clmllf5duveg70f7kiq54qrqke"
+	}
+	r = requests.get(url,verify=False,headers=headers)
+	
+	if Clean_Url != "":
+		loger = r.text
+		Grabify = loger.split(":")[1]
+		
+		print("Your Graber url")
+		print("-"*40)
+		print(f"https://grabifyicu.com/{Grabify}")
+		print("-"*40)
+		Tracker = loger.split(":")[2]
+		print("Your Tracking url")
+		print("-"*40)
+		print(f"https://grabify.icu/{Tracker}")
+		print("-"*40)
+	else:
+		print("‏error : your need to send url")
+                           
+print("""                          
+lllllll                    
+l:::::l                    
+l:::::l                    
+l:::::l                    
+ l::::lppppp   ppppppppp   
+ l::::lp::::ppp:::::::::p  
+ l::::lp:::::::::::::::::p 
+ l::::lpp::::::ppppp::::::p
+ l::::l p:::::p     p:::::p
+ l::::l p:::::p     p:::::p
+ l::::l p:::::p     p:::::p
+ l::::l p:::::p    p::::::p
+l::::::lp:::::ppppp:::::::p
+l::::::lp::::::::::::::::p 
+l::::::lp::::::::::::::pp  
+llllllllp::::::pppppppp    
+        p:::::p            
+        p:::::p            
+       p:::::::p           
+       p:::::::p           
+       p:::::::p           
+       ppppppppp           
+
+print("""                                
+print("-"*40)
+print("To Grab the ip address | Dev : Black_king")
+print("-"*40)
+loger()
